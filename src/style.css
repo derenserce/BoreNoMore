@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply select-auto scroll-p-[8.8vh] scroll-smooth;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+*::-webkit-scrollbar {
+  @apply w-0;
+}
+
+*::-webkit-scrollbar-thumb {
+  @apply rounded-xl bg-neutral-600;
+}
+
+@layer components {
+  .buttonActivity {
+    @apply w-max rounded-full border-[1px] px-5 py-3 text-sm transition-all duration-200 hover:bg-gradient-to-r from-[#04DAFF] via-[#7876EB] to-[#FA04D5] hover:scale-105 hover:shadow-lg md:text-base;
+  }
+
+  .cardInfo {
+    @apply rounded-full bg-white px-3 py-1 text-black;
+  }
+
+  .likeDislike {
+    @apply -mt-1 text-4xl text-gray-400 duration-200 ease-out hover:text-red-500;
+  }
+}
+
