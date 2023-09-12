@@ -22,7 +22,7 @@ html {
 
 @layer components {
   .buttonActivity {
-    @apply w-max rounded-full border-[1px] px-5 py-3 text-sm transition-all duration-200 hover:bg-gradient-to-r from-[#04DAFF] via-[#7876EB] to-[#FA04D5] hover:scale-105 hover:shadow-lg md:text-base;
+    @apply w-max rounded-full border-[1px] from-[#04DAFF] via-[#7876EB] to-[#FA04D5] px-5 py-3 text-sm transition-all duration-200 hover:scale-105 hover:bg-gradient-to-r hover:shadow-lg md:text-base;
   }
 
   .cardInfo {
@@ -33,4 +33,3 @@ html {
     @apply -mt-1 text-4xl text-gray-400 duration-200 ease-out hover:text-red-500;
   }
 }
-

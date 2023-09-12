@@ -6,7 +6,7 @@
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center text-start 2xl:px-20">
+  <div class="flex flex-col items-center justify-center text-start xl:gap-24">
     <img src="../assets/logo.png" alt="logo" class="mx-auto w-3/4 sm:w-max" />
     <div class="max-w-md md:text-lg">
       <p>
