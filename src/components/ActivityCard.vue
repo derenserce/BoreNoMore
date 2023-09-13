@@ -8,6 +8,7 @@
   defineProps({
     activity: Object as PropType<Activity>,
   });
+  
 </script>
 
 <template>

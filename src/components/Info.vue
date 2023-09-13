@@ -9,19 +9,16 @@
     activity: Object as PropType<Activity>,
   });
 
-  const activityStore = useActivityStore();
-
   const { favorites } = storeToRefs(useActivityStore());
 </script>
 
 <template>
-  <div class="mx-auto flex max-w-lg flex-col gap-4 overflow-y-scroll  xl:-mx-40 2xl:ml-80 xl:py-24">
+  <div
+    class="mx-auto flex w-full max-w-lg flex-col gap-4 overflow-y-scrol xl:-mx-20 xl:py-24 xl:ml-60">
     <ul>
       <ActivityCard :activity="activity" />
     </ul>
-    <div
-      class="overflow-y-scroll rounded-xl bg-gray-900/80 p-4"
-      v-if="activityStore.favorites.length > 0">
+    <div class="overflow-y-scroll rounded-xl bg-gray-900/80 p-4" v-if="favorites.length > 0">
       <div class="flex justify-between pb-4">
         <h1 class="pb-4 text-xl font-bold">Favorites</h1>
         <router-link to="/board" class="buttonActivity px-4 py-2">Board</router-link>

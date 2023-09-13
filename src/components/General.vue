@@ -14,7 +14,7 @@
         feel dull, so we're here to spice things up with a world of exciting activities tailored
         just for you.
       </p>
-      <ol class="list-disc">
+      <ol class="sm:list-disc">
         <p class="py-4 font-semibold">How it works:</p>
         <li>Feeling Bored? 🙁</li>
         <li>Tap "Generate Activity" for Instant Fun! 🎉</li>
