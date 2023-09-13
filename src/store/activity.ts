@@ -9,10 +9,11 @@ export const useActivityStore = defineStore(
     const show = ref(false);
 
     const isActivityInFavorites = computed(() => (activity: Activity) => {
-      return favorites.value.some((favorite) => favorite.activity === activity.activity);
+      return favorites.value.some(
+        (favorite) => favorite.activity === activity.activity,
+      );
     });
 
-    
     function addFavorite(activity: Activity) {
       if (!isActivityInFavorites.value(activity)) {
         favorites.value.push(activity);

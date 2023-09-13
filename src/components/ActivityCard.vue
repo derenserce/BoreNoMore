@@ -4,21 +4,23 @@
   import { PropType } from "vue";
 
   const activityStore = useActivityStore();
-  
+
   defineProps({
     activity: Object as PropType<Activity>,
   });
-  
 </script>
 
 <template>
   <div
     v-if="activity"
     class="flex h-full w-full flex-col rounded-xl bg-gray-100/40 px-4">
-    <div class="mb-2 flex justify-between py-2 text-xl font-bold">
-      {{ activity?.activity }}
+    <div
+      class="mb-2 flex justify-between py-2 text-start text-xl font-semibold">
+      {{ activity.activity }}
       <button
-        v-if="!activityStore.isActivityInFavorites(activity)"
+        v-if="
+          !activityStore.isActivityInFavorites(activity)
+        "
         @click="activityStore.addFavorite(activity)"
         class="likeDislike">
         ♥
@@ -31,9 +33,13 @@
       </button>
     </div>
     <div class="flex gap-2 pb-4 text-center">
-      <span class="cardInfo">🧍‍♂️{{ activity.participants }}</span>
+      <span class="cardInfo"
+        >🧍‍♂️{{ activity.participants }}</span
+      >
       <span class="cardInfo">💸{{ activity.price }}</span>
-      <span class="cardInfo flex gap-2"><span>ℹ</span>{{ activity.type }}</span>
+      <span class="cardInfo flex gap-2 capitalize"
+        ><span>ℹ</span>{{ activity.type }}</span
+      >
     </div>
   </div>
 </template>

@@ -7,7 +7,9 @@ export function useActivityAPI() {
 
   async function fetchPaidActivity() {
     try {
-      const res = await axios.get("https://www.boredapi.com/api/activity?minprice=0.1&maxprice=1");
+      const res = await axios.get(
+        "https://www.boredapi.com/api/activity?minprice=0.1&maxprice=1",
+      );
       activity.value = res.data;
       console.log(res.data);
     } catch (err) {
@@ -17,7 +19,9 @@ export function useActivityAPI() {
 
   async function fetchFreeActivity() {
     try {
-      const res = await axios.get("https://www.boredapi.com/api/activity?price=0.0");
+      const res = await axios.get(
+        "https://www.boredapi.com/api/activity?price=0.0",
+      );
       activity.value = res.data;
       console.log(res.data);
     } catch (err) {
