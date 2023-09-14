@@ -1,13 +1,15 @@
 <script setup lang="ts">
-  import { useActivityStore } from "../store/activity";
-  import Activity from "../interfaces";
-  import { PropType } from "vue";
+import { useActivityStore } from "../store/activity";
+import Activity from "../interfaces";
+import { PropType } from "vue";
 
-  const activityStore = useActivityStore();
+const activityStore = useActivityStore();
 
-  defineProps({
-    activity: Object as PropType<Activity>,
-  });
+defineProps({
+  activity: Object as PropType<Activity>,
+  inBoard: Boolean,
+  inFinished: Boolean,
+});
 </script>
 
 <template>
@@ -17,25 +19,37 @@
     <div
       class="mb-2 flex justify-between py-2 text-start text-xl font-semibold">
       {{ activity.activity }}
-      <button
-        v-if="
-          !activityStore.isActivityInFavorites(activity)
-        "
-        @click="activityStore.addFavorite(activity)"
-        class="likeDislike">
-        ♥
-      </button>
-      <button
-        v-else
-        @click="activityStore.deleteFavorite(activity)"
-        class="likeDislike">
-        -
-      </button>
+      <div v-if="!inBoard">
+        <button
+          v-if="!activityStore.isActivityInFavorites(activity)"
+          @click="activityStore.addFavorite(activity)"
+          class="likeDislike">
+          +
+        </button>
+        <button
+          v-else
+          @click="activityStore.deleteFavorite(activity)"
+          class="likeDislike">
+          -
+        </button>
+      </div>
+      <div
+        v-if="inBoard && !inFinished"
+        class="flex gap-4">
+        <button
+          @click="activityStore.deleteFavorite(activity)"
+          class="likeDislike">
+          -
+        </button>
+        <button
+          @click="activityStore.addFinished(activity)"
+          class="likeDislike">
+          +
+        </button>
+      </div>
     </div>
     <div class="flex gap-2 pb-4 text-center">
-      <span class="cardInfo"
-        >🧍‍♂️{{ activity.participants }}</span
-      >
+      <span class="cardInfo">🧍‍♂️{{ activity.participants }}</span>
       <span class="cardInfo">💸{{ activity.price }}</span>
       <span class="cardInfo flex gap-2 capitalize"
         ><span>ℹ</span>{{ activity.type }}</span

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-  defineProps({
-    fetchFree: Function,
-    fetchPaid: Function,
-  });
+defineProps({
+  fetchFree: Function,
+  fetchPaid: Function,
+});
 </script>
 
 <template>
