@@ -15,20 +15,20 @@ defineProps({
 <template>
   <div
     v-if="activity"
-    class="flex h-full w-full flex-col rounded-xl bg-gray-100/40 px-4">
+    class="flex h-full  flex-col rounded-xl bg-gray-100/40 px-4">
     <div
       class="mb-2 flex justify-between py-2 text-start text-xl font-semibold">
       {{ activity.activity }}
       <div v-if="!inBoard">
         <button
-          v-if="!activityStore.isActivityInFavorites(activity)"
-          @click="activityStore.addFavorite(activity)"
+          v-if="!activityStore.isActivityInTodos(activity)"
+          @click="activityStore.addTodo(activity)"
           class="likeDislike">
           +
         </button>
         <button
           v-else
-          @click="activityStore.deleteFavorite(activity)"
+          @click="activityStore.deleteTodo(activity)"
           class="likeDislike">
           -
         </button>
@@ -37,7 +37,7 @@ defineProps({
         v-if="inBoard && !inFinished"
         class="flex gap-4">
         <button
-          @click="activityStore.deleteFavorite(activity)"
+          @click="activityStore.deleteTodo(activity)"
           class="likeDislike">
           -
         </button>

@@ -6,24 +6,24 @@ export const useActivityStore = defineStore(
   "activity",
   () => {
     const show = ref(false);
-    const favorites = ref<Activity[]>([]);
+    const todos = ref<Activity[]>([]);
     const finished = ref<Activity[]>([]);
 
-    const isActivityInFavorites = computed(() => (activity: Activity) => {
-      return favorites.value.some(
-        (favorite) => favorite.activity === activity.activity,
+    const isActivityInTodos = computed(() => (activity: Activity) => {
+      return todos.value.some(
+        (todo) => todo.activity === activity.activity,
       );
     });
 
-    function addFavorite(activity: Activity) {
-      if (!isActivityInFavorites.value(activity)) {
-        favorites.value.push(activity);
+    function addTodo(activity: Activity) {
+      if (!isActivityInTodos.value(activity)) {
+        todos.value.push(activity);
       }
     }
 
-    function deleteFavorite(activity: Activity) {
-      const index = favorites.value.indexOf(activity);
-      favorites.value.splice(index, 1);
+    function deleteTodo(activity: Activity) {
+      const index = todos.value.indexOf(activity);
+      todos.value.splice(index, 1);
     }
 
     function addFinished(activity: Activity) {
@@ -32,8 +32,8 @@ export const useActivityStore = defineStore(
           (finished) => finished.activity === activity.activity,
         )
       ) {
-        const index = favorites.value.indexOf(activity);
-        favorites.value.splice(index, 1);
+        const index = todos.value.indexOf(activity);
+        todos.value.splice(index, 1);
         finished.value.push(activity);
       }
     }
@@ -44,11 +44,11 @@ export const useActivityStore = defineStore(
 
     return {
       show,
-      favorites,
+      todos,
       finished,
-      isActivityInFavorites,
-      addFavorite,
-      deleteFavorite,
+      isActivityInTodos,
+      addTodo,
+      deleteTodo,
       addFinished,
       clearFinished,
     };

@@ -5,7 +5,7 @@ import FavoritesList from "../components/FavoritesList.vue";
 
 const acitityStore = useActivityStore();
 
-const { favorites, finished } = storeToRefs(acitityStore);
+const { todos, finished } = storeToRefs(acitityStore);
 
 const inBoard = true;
 const inFinished = true;
@@ -21,11 +21,11 @@ const FinishedTitle = "Finished";
       class="buttonActivity absolute inset-4 h-max w-max px-4 py-2"
       >Back to home!</router-link
     >
-    <div class="mx-auto grid h-full w-3/4 grid-cols-2 gap-20">
+    <div class="mx-auto grid h-full w-full xl:w-3/4 grid-rows-2 xl:grid-cols-2 gap-20">
       <FavoritesList
         :title="TodoTitle"
-        :listArray="favorites"
-        :array="favorites"
+        :listArray="todos"
+        :array="todos"
         :inBoard="inBoard" />
       <FavoritesList
         :title="FinishedTitle"

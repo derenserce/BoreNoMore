@@ -10,7 +10,7 @@ defineProps({
   activity: Object as PropType<Activity>,
 });
 
-const { favorites } = storeToRefs(useActivityStore());
+const { todos } = storeToRefs(useActivityStore());
 
 const TodoTitle = "To do's";
 </script>
@@ -23,10 +23,10 @@ const TodoTitle = "To do's";
     </div>
     <div class="overflow-y-scroll">
       <FavoritesList
-        v-if="favorites.length > 0"
+        v-if="todos.length > 0"
         :title="TodoTitle"
-        :listArray="favorites"
-        :array="favorites" />
+        :listArray="todos"
+        :array="todos" />
     </div>
   </div>
 </template>

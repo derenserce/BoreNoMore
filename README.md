@@ -1,18 +1,10 @@
-# Vue 3 + TypeScript + Vite
+# BoreNoMore
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+De app maakt gebruik van de Bored API om activiteiten te fetchen. Deze activiteiten kun je vervolgens opslaan in een favorieten /todos lijst. Als je wilt kan je deze opslaan als 'Finished' in de board. 
 
-## Recommended IDE Setup
+De app is grotendeels responsive en maakt gebruik van typescript. 
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Tijdbesteding
 
-## Type Support For `.vue` Imports in TS
+Aangezien de opdracht relatief simpel was duurde het niet zo lang om een MVP te maken met de basis functionaliteiten. Doordat Vue ook een redelijke simpele taal is met duidelijke docs en ik al kennis heb in React, was het leren ervan niet erg moeilijk. Daarom heb ik de meeste tijd besteed om te leren hoe je het beste zo een clean mogelijke code kan schrijven, ookal is het zeker nog niet zo clean. Verder heb ik nog best veel dingen veranderd. Zo heb ik bijvoorbeeld de Pinia store van de options naar de compositions API structuur veranderd. Verder was ik best lang bezig met het design en responsive maken aangezien er steeds stukken braken nadat ik nieuwe dingen toevoegde. 
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.

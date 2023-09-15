@@ -17,14 +17,14 @@ defineProps({
         life can sometimes feel dull, so we're here to spice things up with a
         world of exciting activities tailored just for you.
       </p>
-      <ol class="sm:list-disc">
+      <ol class="sm:list-disc hidden sm:inline">
         <p class="py-4 font-semibold">How it works:</p>
         <li>Feeling Bored? 🙁</li>
-        <li>Tap "Generate Activity" for Instant Fun! 🎉</li>
-        <li>Explore Categories, Save Favorites, and Share with Friends! 🚀</li>
+        <li>Tap on one of the buttons for Instant Fun! 🎉</li>
+        <li>Save Favorites "+", and mark them as finished in the board! 🚀</li>
       </ol>
     </div>
-    <div class="mt-4 flex justify-center gap-4">
+    <div class="mt-4 flex justify-center gap-4 flex-wrap">
       <button
         @click="fetchFree?.()"
         class="buttonActivity">
@@ -33,8 +33,14 @@ defineProps({
       <button
         @click="fetchPaid?.()"
         class="buttonActivity">
-        🔎 Paid activity
+        💸 Paid activity
       </button>
+      <router-link
+      
+        to="/board"
+        class="buttonActivity">
+        📃 Go to board
+      </router-link>
     </div>
   </div>
 </template>

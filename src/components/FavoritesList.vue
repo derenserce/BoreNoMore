@@ -19,7 +19,7 @@ const activityStore = useActivityStore();
     v-if="listArray"
     class="h-full overflow-y-scroll rounded-xl bg-blue-400/20 p-4">
     <div class="flex justify-between pb-4">
-      <h1 class="flex w-full justify-between pb-4 text-xl font-bold">
+      <h1 class="flex w-full justify-between text-xl font-bold">
         <p>{{ title }}</p>
         <button
           v-if="inFinished"
@@ -28,12 +28,6 @@ const activityStore = useActivityStore();
           Clear finished
         </button>
       </h1>
-      <router-link
-        v-if="!inBoard"
-        to="/board"
-        class="buttonActivity px-4 py-2"
-        >Board</router-link
-      >
     </div>
     <ul class="space-y-2">
       <li v-for="activity in array">
